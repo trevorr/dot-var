@@ -1,0 +1,139 @@
+{
+  "def": {
+    "name": "def",
+    "type": "object",
+    "members": {
+      "snippet1": {
+        "name": "snippet1",
+        "type": "string",
+        "value": "\n\tSome snippet that will be included {{#def.a}} later {{=it.f1}}\n"
+      },
+      "xyz": {
+        "name": "xyz",
+        "type": "string",
+        "value": "1"
+      },
+      "fntest": {
+        "name": "fntest",
+        "type": "string",
+        "value": "<!-- evaluation error:  function() {\n\treturn \"Function test worked!\";\n}\n -->"
+      },
+      "block": {
+        "name": "block",
+        "type": "string",
+        "value": "\n\t<div>{{=param}}</div>\n",
+        "param": "param"
+      },
+      "block1": {
+        "name": "block1",
+        "type": "string",
+        "value": "\n\t<div>{{=param.a}}</div>\n",
+        "param": "param"
+      },
+      "testFunctionWithParam": {
+        "name": "testFunctionWithParam",
+        "type": "string",
+        "value": "<!-- evaluation error:  function(str) {\n\t\treturn \"My name is: \" + str;\n\t}\n -->"
+      },
+      "mytestparam": {
+        "name": "mytestparam",
+        "type": "string",
+        "value": " {{=it.name}} "
+      },
+      "testParamDef": {
+        "name": "testParamDef",
+        "type": "string",
+        "value": "\nMy name is: {{=myparam}}\n",
+        "param": "myparam"
+      }
+    }
+  },
+  "it": {
+    "name": "it",
+    "type": "object",
+    "members": {
+      "f1": {
+        "name": "f1",
+        "interpolated": true,
+        "unescaped": true
+      },
+      "f3": {
+        "name": "f3",
+        "interpolated": true,
+        "unescaped": true
+      },
+      "altEmail": {
+        "name": "altEmail",
+        "interpolated": true,
+        "unescaped": true
+      },
+      "farray": {
+        "name": "farray",
+        "type": {
+          "kind": "array",
+          "elements": "object"
+        },
+        "iteration": true,
+        "section": true,
+        "elements": {
+          "members": {
+            "farray": {
+              "name": "farray",
+              "interpolated": true,
+              "unescaped": true,
+              "type": {
+                "kind": "array",
+                "elements": "array"
+              },
+              "iteration": true,
+              "section": true,
+              "elements": {
+                "interpolated": true,
+                "unescaped": true,
+                "iteration": true,
+                "section": true,
+                "elements": {
+                  "interpolated": true,
+                  "unescaped": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "Nodes": {
+        "name": "Nodes",
+        "type": {
+          "kind": "array",
+          "elements": "object"
+        },
+        "members": {
+          "length": {
+            "name": "length",
+            "conditional": true,
+            "section": true
+          }
+        },
+        "iteration": true,
+        "section": true,
+        "elements": {
+          "members": {
+            "title": {
+              "name": "title",
+              "interpolated": true,
+              "unescaped": true
+            }
+          }
+        }
+      },
+      "name": {
+        "name": "name",
+        "interpolated": true,
+        "unescaped": true
+      }
+    }
+  },
+  "NaN": {
+    "name": "NaN"
+  }
+}

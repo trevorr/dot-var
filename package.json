@@ -1,0 +1,41 @@
+{
+  "name": "dot-var",
+  "version": "1.0.0",
+  "description": "Analyze variable usages in doT.js templates",
+  "main": "index.js",
+  "files": [
+    "README.md",
+    "src"
+  ],
+  "scripts": {
+    "docs": "jsdoc2md --heading-depth 3 -t jsdoc2md/README.hbs index.js src/*.js > README.md",
+    "prepublishOnly": "npm run docs",
+    "prepush": "npm test",
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevorr/dot-var.git"
+  },
+  "keywords": [
+    "dot",
+    "template"
+  ],
+  "author": "Trevor Robinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trevorr/dot-var/issues"
+  },
+  "homepage": "https://github.com/trevorr/dot-var#readme",
+  "dependencies": {
+    "acorn": "^6.0.2",
+    "estree-analyzer": "git+https://github.com/trevorr/estree-analyzer.git",
+    "vm2": "^3.6.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "husky": "^1.0.1",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^5.2.0"
+  }
+}
